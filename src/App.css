@@ -243,3 +243,55 @@
   font-weight: 600;
 }
 
+/* F2: mis reservas */
+.reservas {
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+
+.reservas h2 {
+  font-size: 1.1rem;
+}
+
+.reservas ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.reserva {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.reserva p {
+  margin: 0;
+}
+
+.reserva small {
+  color: #64748b;
+}
+
+.reserva button {
+  padding: 6px 10px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  cursor: pointer;
+}
+
+.vacio {
+  padding: 12px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  color: #64748b;
+}
