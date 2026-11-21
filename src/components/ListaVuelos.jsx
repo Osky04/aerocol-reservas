@@ -1,6 +1,7 @@
 import TarjetaVuelo from './TarjetaVuelo.jsx'
 
-function ListaVuelos({ vuelos, nombreOrigen, nombreDestino }) {
+// Props nuevas: seleccionadoId (qué tarjeta resaltar) y onSeleccionar (función que baja a cada tarjeta)
+function ListaVuelos({ vuelos, nombreOrigen, nombreDestino, seleccionadoId, onSeleccionar }) {
   return (
     <section className="lista">
       <h2>
@@ -9,7 +10,12 @@ function ListaVuelos({ vuelos, nombreOrigen, nombreDestino }) {
       </h2>
       <ul>
         {vuelos.map((v) => (
-          <TarjetaVuelo key={v.id} vuelo={v} />
+          <TarjetaVuelo
+            key={v.id}
+            vuelo={v}
+            seleccionada={v.id === seleccionadoId}
+            onSeleccionar={onSeleccionar}
+          />
         ))}
       </ul>
     </section>
