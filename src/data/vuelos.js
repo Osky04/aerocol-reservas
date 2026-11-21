@@ -18,6 +18,11 @@ export const VUELOS = [
   // (en el catálogo original cada ruta tenía un solo vuelo). Las demás rutas no cambian.
   { id: 'v7', origen: 'BOG', destino: 'CTG', avion: 'Airbus A320', hora: '19:30', precio: 450000 },
   { id: 'v8', origen: 'BOG', destino: 'CTG', avion: 'Embraer 190', hora: '07:00', precio: 400000 },
+  { id: 'v9', origen: 'BAQ', destino: 'BOG', avion: 'Airbus A320', hora: '06:45', precio: 310000 },
+  { id: 'v10', origen: 'BOG', destino: 'BAQ', avion: 'Airbus A320', hora: '16:20', precio: 310000 },
+  { id: 'v11', origen: 'CLO', destino: 'BOG', avion: 'ATR 72', hora: '11:10', precio: 230000 },
+  { id: 'v12', origen: 'BOG', destino: 'CLO', avion: 'Boeing 737-800', hora: '14:35', precio: 250000 },
+  { id: 'v13', origen: 'SMR', destino: 'BOG', avion: 'Embraer 190', hora: '09:50', precio: 330000 },
 ]
 
 // F1: clases de vuelo. El factor multiplica el precio del vuelo.
