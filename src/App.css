@@ -126,6 +126,11 @@
 /* Proyecto final: estilos nuevos (F1, F2, F3)        */
 /* ================================================== */
 
+/* F3: selector de orden dentro de la tarjeta de búsqueda */
+.orden {
+  margin-top: 16px;
+}
+
 /* F3: tarjeta clicable y resaltada */
 .tarjeta {
   cursor: pointer;

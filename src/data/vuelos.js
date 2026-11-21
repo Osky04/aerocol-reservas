@@ -14,6 +14,10 @@ export const VUELOS = [
   { id: 'v4', origen: 'MDE', destino: 'BOG', avion: 'ATR 72', hora: '09:05', precio: 260000 },
   { id: 'v5', origen: 'BOG', destino: 'MDE', avion: 'Boeing 737-800', hora: '13:10', precio: 340000 },
   { id: 'v6', origen: 'MDE', destino: 'CTG', avion: 'Airbus A320', hora: '12:30', precio: 320000 },
+  // F3: dos vuelos más en Bogotá → Cartagena para que "Ordenar por" se pueda ver
+  // (en el catálogo original cada ruta tenía un solo vuelo). Las demás rutas no cambian.
+  { id: 'v7', origen: 'BOG', destino: 'CTG', avion: 'Airbus A320', hora: '19:30', precio: 450000 },
+  { id: 'v8', origen: 'BOG', destino: 'CTG', avion: 'Embraer 190', hora: '07:00', precio: 400000 },
 ]
 
 // F1: clases de vuelo. El factor multiplica el precio del vuelo.
