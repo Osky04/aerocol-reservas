@@ -4,6 +4,7 @@ import { CIUDADES, VUELOS } from './data/vuelos.js'
 import Header from './components/Header.jsx'
 import SelectorRuta from './components/SelectorRuta.jsx'
 import ListaVuelos from './components/ListaVuelos.jsx'
+import FormularioReserva from './components/FormularioReserva.jsx'
 import Footer from './components/Footer.jsx'
 
 function nombreCiudad(codigo) {
@@ -13,6 +14,8 @@ function nombreCiudad(codigo) {
 function App() {
   const [origen, setOrigen] = useState('')
   const [destino, setDestino] = useState('')
+  const [seleccionado, setSeleccionado] = useState(null) // F1: vuelo elegido
+  const [reservas, setReservas] = useState([]) // F1: por ahora solo en memoria (F2 las muestra y guarda)
 
   const ciudadesDestino = CIUDADES.filter((c) => c.codigo !== origen)
   const vuelosEncontrados =
@@ -28,6 +31,12 @@ function App() {
   const intercambiar = () => {
     setOrigen(destino)
     setDestino(origen)
+  }
+
+  // F1: la reserva llega terminada desde FormularioReserva
+  const agregarReserva = (nueva) => {
+    setReservas([...reservas, nueva])
+    setSeleccionado(null) // cerramos el formulario después de reservar
   }
 
   return (
@@ -60,6 +69,20 @@ function App() {
           vuelos={vuelosEncontrados}
           nombreOrigen={nombreCiudad(origen)}
           nombreDestino={nombreCiudad(destino)}
+          seleccionadoId={seleccionado?.id}
+          onSeleccionar={setSeleccionado}
+        />
+      )}
+
+      {/* F1: el formulario solo existe si hay un vuelo elegido.
+          key={seleccionado.id} hace que se reinicie al elegir otro vuelo. */}
+      {seleccionado && (
+        <FormularioReserva
+          key={seleccionado.id}
+          vuelo={seleccionado}
+          nombreOrigen={nombreCiudad(origen)}
+          nombreDestino={nombreCiudad(destino)}
+          onReservar={agregarReserva}
         />
       )}
 
